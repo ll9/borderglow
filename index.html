@@ -1,0 +1,35 @@
+<style>
+    #myGlower {
+        background-color: #ccc;
+        border: 1px solid transparent;
+        width: 100px;
+        height: 100px;
+        margin: 50px;
+    }
+
+    .glow-ani {
+        animation: glow .5s 4 alternate;
+    }
+
+    @keyframes glow {
+        to {
+            border-color: dodgerblue;
+            box-shadow: 0 0 5px dodgerblue;
+        }
+    }
+</style>
+
+<body>
+    <div id="myGlower" class="glow-ani"></div>
+    <button id="trigger">trigger animation</button>
+</body>
+
+<script>
+    document.getElementById("trigger").onclick = function (evt) {
+        let glowElement = document.getElementById("myGlower");
+        glowElement.classList.remove("glow-ani")
+        void glowElement.offsetWidth;
+        glowElement.classList.add("glow-ani")
+        
+    }
+</script>
